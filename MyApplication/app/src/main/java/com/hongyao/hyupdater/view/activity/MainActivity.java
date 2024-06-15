@@ -123,13 +123,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
                 loadingDialog = WaitDialog.show(MainActivity.this.getString(R.string.checking));
                 LogUtils.messager("language:" + language+"///otaVersion"+otaVersion+"///serialno"+serialno+"///model"+model);
-                //test start
-                //S13_80_P503_EYYB_16_2_V1.03_KC_20231009/51talk20240321002/EYYB-MPW2-P503?language=ja-JP
-                /*otaVersion="S13_80_P503_EYYB_16_2_V1.03_KC_20231009";
-                serialno = "51talk20240321002";
-                model = "EYYB-MPW2-P503";
-                language = "ja-JP";*/
-                //test end
                 internetManager.getRequest(otaVersion,serialno,model,language);
                 break;
             case R.id.tv_device_mid:

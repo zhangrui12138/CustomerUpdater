@@ -44,12 +44,6 @@ public class CycleBroadcastReciver extends BroadcastReceiver {
         model = Build.MODEL;
         language = getSystemLanguage(context);
         LogUtils.messager("CycleBroadcastReciver----------------language:" + language+"///otaVersion"+otaVersion+"///serialno"+serialno+"///model"+model);
-        //test start
-        /*otaVersion="S13_80_P503_EYYB_16_2_V1.03_KC_20231009";
-        serialno = "51talk20240321002";
-        model = "EYYB-MPW2-P503";
-        language = "ja-JP";*/
-        //test end
         if(internetManager != null){
             internetManager.queryState(otaVersion,serialno,model,language,context);
         }
@@ -67,7 +61,7 @@ public class CycleBroadcastReciver extends BroadcastReceiver {
         internetManager = new InternetManager();
         am = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
         Intent it = new Intent(context, CycleBroadcastReciver.class);
-        it.setAction("com.hongyao.checkUpdate");
+        it.setAction(action_checkupdate);
         pi = PendingIntent.getBroadcast(context, 0, it, PendingIntent.FLAG_UPDATE_CURRENT);
     }
 
