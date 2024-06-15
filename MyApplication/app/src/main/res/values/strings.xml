@@ -1,0 +1,42 @@
+<resources>
+    <string name="app_name">HyUpdater</string>
+    <string name="appTitle">System update detection</string>
+    <string name="deviceModel">Model:</string>
+    <string name="versionCode">Version No:</string>
+    <string name="SNCode">SN number：</string>
+    <string name="checkUpdateButton">Detection update</string>
+    <string name="confirmButton">Sure</string>
+    <string name="cancelButton">Cancel</string>
+    <string name="deleteButton">Delete</string>
+    <string name="downloadError">Network error, please try again later</string>
+    <string name="updateButton">Upgrade</string>
+    <string name="findAlreadyDownloadZip">Do you want to upgrade immediately?</string>
+    <string name="deleteSuccess">Deleted successfully!</string>
+    <string name="findNewVersion">Discovering new versions</string>
+    <string name="downloadButton">Download</string>
+    <string name="netTimeOut">Connection timeout</string>
+    <string name="netError">Network error, please try again!</string>
+    <string name="downloadComplete">Download completed</string>
+    <string name="verifying">Verify file integrity...</string>
+    <string name="verifyFiled">File validation failed, please try again later!</string>
+    <string name="fileDamage">The file is corrupted, please try again later!</string>
+    <string name="verifyComplete">Validation complete</string>
+    <string name="askUpdateNow">Upgrade now?</string>
+    <string name="userCancelDownload">The user cancelled the download</string>
+    <string name="checking">Under detection</string>
+    <string name="localUpdate">Local upgrades</string>
+    <string name="findLocalZip">A local upgrade has been detected. Do you want to upgrade immediately?</string>
+    <string name="localZipNotFound">No local upgrade packages!</string>
+    <string name="netNotAvailable">Network unavailable</string>
+    <string name="startDownloading">Start downloading</string>
+    <string name="downloading">Downloading...</string>
+    <string name="pleasePatience">Please be patient...</string>
+    <string name="dontHaveSystemPermission">No system privileges</string>
+    <string name="askGoUpdate">Do you want to upgrade?</string>
+    <string name="releaseNumber">Release Number:</string>
+    <string name="description">Description:</string>
+    <string name="powerToLow">Low quantity of electricity</string>
+    <string name="back">back</string>
+    <string name="backMsg">Are you sure to quit?</string>
+
+</resources>
