@@ -64,6 +64,10 @@ public  class HyDialog extends Dialog implements View.OnClickListener {
         if(!msgTextSize.equals("-1")){
             dialog_msg.setTextSize(Float.parseFloat(msgTextSize));
         }
+        if(Contain.OPERATOR_DOWNLODINGPROGESS.equals(type)){
+            dialog_okButton.setVisibility(View.GONE);
+        }
+
     }
 
     private int mWidth = 0;
