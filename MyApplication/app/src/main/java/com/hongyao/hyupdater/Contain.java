@@ -1,5 +1,8 @@
 package com.hongyao.hyupdater;
+/*
+created by zhangrui for 20240613
 
+*/
 public class Contain {
     static public String BASE_TEST_URL="http://192.168.2.239:20087/";
     static public String BASE_URL="http://43.139.195.63:20087/";

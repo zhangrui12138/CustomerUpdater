@@ -18,6 +18,9 @@ import com.hongyao.hyupdater.utils.SystemPropertiesUtils;
 import com.hongyao.hyupdater.view.activity.MainActivity;
 
 import java.util.Locale;
+/*
+created by zhangrui for 20240613
+*/
 
 public class CycleBroadcastReciver extends BroadcastReceiver {
     private AlarmManager am;
@@ -33,12 +36,6 @@ public class CycleBroadcastReciver extends BroadcastReceiver {
     public void onReceive(Context context, Intent intent) {
         init(context);
         LogUtils.messager("CycleBroadcastReciver===="+intent.getAction());
-        /*switch (intent.getAction()){
-            case action_checkupdate:
-                break;
-            case action_boot:
-                break;
-        }*/
         serialno = Build.SERIAL;
         otaVersion = SystemPropertiesUtils.getProperty("ro.build.display.id", "");
         model = Build.MODEL;
@@ -71,7 +68,7 @@ public class CycleBroadcastReciver extends BroadcastReceiver {
             String delayTimeStr = SystemPropertiesUtils.getProperty("persist.sys.hy.updatetime", "10");
             LogUtils.messager("delayTime:" + delayTimeStr);
             long delayTime = Long.parseLong(delayTimeStr);
-            long triggerAtTime = SystemClock.elapsedRealtime() + 1000 * 60 * /*60 **/ delayTime;
+            long triggerAtTime = SystemClock.elapsedRealtime() + 1000 * 60 * 60 * delayTime;
             cancelAlarmTask();
             am.set(AlarmManager.ELAPSED_REALTIME_WAKEUP, triggerAtTime, pi);
         }

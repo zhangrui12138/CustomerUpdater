@@ -31,6 +31,9 @@ import java.security.MessageDigest;
 
 import okhttp3.Call;
 import okhttp3.ResponseBody;
+/*
+created by zhangrui for 20240613
+*/
 
 public class UpdatePackageInstallService extends Service implements InternetManager.TimeOutInterface {
     private String md5;

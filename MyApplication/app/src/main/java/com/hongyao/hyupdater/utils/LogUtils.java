@@ -1,7 +1,9 @@
 package com.hongyao.hyupdater.utils;
 
 import android.util.Log;
-
+/*
+created by zhangrui for 20240613
+*/
 public class LogUtils {
     public static boolean debug = true;
     public static final String TAG = "zhangrui-daina";

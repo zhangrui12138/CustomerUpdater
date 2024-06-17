@@ -9,6 +9,9 @@ import android.widget.TextView;
 import com.hongyao.hyupdater.Contain;
 import com.hongyao.hyupdater.R;
 import com.hongyao.hyupdater.utils.SystemPropertiesUtils;
+/*
+created by zhangrui for 20240613
+*/
 
 
 

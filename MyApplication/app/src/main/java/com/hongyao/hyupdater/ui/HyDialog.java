@@ -13,6 +13,9 @@ import com.hongyao.hyupdater.Contain;
 import com.hongyao.hyupdater.R;
 import com.hongyao.hyupdater.utils.SystemPropertiesUtils;
 import com.hongyao.hyupdater.view.activity.MainActivity;
+/*
+created by zhangrui for 20240613
+*/
 
 
 public  class HyDialog extends Dialog implements View.OnClickListener {

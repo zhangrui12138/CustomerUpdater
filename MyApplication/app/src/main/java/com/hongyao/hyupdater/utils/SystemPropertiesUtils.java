@@ -1,7 +1,9 @@
 package com.hongyao.hyupdater.utils;
 
 import java.lang.reflect.Method;
-
+/*
+created by zhangrui for 20240613
+*/
 public final class SystemPropertiesUtils {
     private static final String CLASS_NAME = "android.os.SystemProperties";
 
