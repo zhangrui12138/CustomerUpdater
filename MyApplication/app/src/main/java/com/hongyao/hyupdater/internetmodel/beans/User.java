@@ -18,6 +18,7 @@ public class User implements Serializable {
     private int is_need_update;
     private String md5;
     private String msg;
+    private int force_update_time;
 
     public String getDownloadurl() {
         return downloadurl;
@@ -75,6 +76,14 @@ public class User implements Serializable {
         this.msg = msg;
     }
 
+    public int getForce_update_time() {
+        return force_update_time;
+    }
+
+    public void setForce_update_time(int force_update_time) {
+        this.force_update_time = force_update_time;
+    }
+
     @Override
     public String toString() {
         return "User{" +
@@ -85,6 +94,7 @@ public class User implements Serializable {
                 ", is_need_update=" + is_need_update +
                 ", md5='" + md5 + '\'' +
                 ", msg='" + msg + '\'' +
+                ", force_update_time=" + force_update_time +
                 '}';
     }
 }

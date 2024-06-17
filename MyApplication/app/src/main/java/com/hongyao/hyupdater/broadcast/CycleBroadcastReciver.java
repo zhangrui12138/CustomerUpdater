@@ -36,6 +36,11 @@ public class CycleBroadcastReciver extends BroadcastReceiver {
     public void onReceive(Context context, Intent intent) {
         init(context);
         LogUtils.messager("CycleBroadcastReciver===="+intent.getAction());
+        switch (intent.getAction()){
+            case action_boot:
+                SystemPropertiesUtils.setProperty(Contain.ISQUERY_SHOW, "false");
+            break;
+        }
         serialno = Build.SERIAL;
         otaVersion = SystemPropertiesUtils.getProperty("ro.build.display.id", "");
         model = Build.MODEL;
@@ -65,10 +70,10 @@ public class CycleBroadcastReciver extends BroadcastReceiver {
 
     private void setAlarmTask() {
         if(am != null && pi != null) {
-            String delayTimeStr = SystemPropertiesUtils.getProperty("persist.sys.hy.updatetime", "10");
-            LogUtils.messager("delayTime:" + delayTimeStr);
-            long delayTime = Long.parseLong(delayTimeStr);
-            long triggerAtTime = SystemClock.elapsedRealtime() + 1000 * 60 * 60 * delayTime;
+            //String delayTimeStr = SystemPropertiesUtils.getProperty("persist.sys.hy.updatetime", "10");
+            //LogUtils.messager("delayTime:" + delayTimeStr);
+            //long delayTime = Long.parseLong(delayTimeStr);
+            long triggerAtTime = SystemClock.elapsedRealtime() + 1000 * 60 * /*60 * delayTime*/30;
             cancelAlarmTask();
             am.set(AlarmManager.ELAPSED_REALTIME_WAKEUP, triggerAtTime, pi);
         }

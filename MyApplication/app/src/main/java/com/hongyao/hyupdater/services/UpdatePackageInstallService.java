@@ -94,7 +94,6 @@ public class UpdatePackageInstallService extends Service implements InternetMana
         try {
             RecoverySystem.installPackage(getApplicationContext(), file);
         } catch (IOException e) {
-            SystemPropertiesUtils.setProperty(Contain.INSTALL_NO_UI,"false");
             LogUtils.messager("UpdatePackageInstallService----------e.getMessage()="+e.getMessage());
             Toast.makeText(getApplicationContext(), R.string.dontHaveSystemPermission, Toast.LENGTH_SHORT).show();
         }
@@ -223,7 +222,6 @@ public class UpdatePackageInstallService extends Service implements InternetMana
                 return;
             } catch (IOException e) {
                 e.printStackTrace();
-                SystemPropertiesUtils.setProperty(Contain.INSTALL_NO_UI,"false");
                 Pair<Integer, Long> pairs = new Pair<>(-1, Long.valueOf(-1));
                 downloadZipFileTask.doProgress(pairs);
                 LogUtils.messager("UpdatePackageInstallService----------Failed to save the file!");
@@ -233,9 +231,7 @@ public class UpdatePackageInstallService extends Service implements InternetMana
                 if (outputStream != null) outputStream.close();
             }
         } catch (IOException e) {
-            e.printStackTrace();
-            SystemPropertiesUtils.setProperty(Contain.INSTALL_NO_UI,"false");
-            LogUtils.messager("UpdatePackageInstallService----------Failed to save the file!");
+            LogUtils.messager("UpdatePackageInstallService----------Failed to save the file!e.getMessage()="+e.getMessage());
             return;
         }
     }

@@ -14,5 +14,4 @@ public class Contain {
     static final public String OPERATOR_3_ALREADYHAVEPACKAGE="already_have_package";
     static final public String OPERATOR_QUERY_STATE="query_state";
     static final public String ISQUERY_SHOW="persist.sys.isqueryui_show";
-    static final public String INSTALL_NO_UI="persist.sys.install_noui";
 }

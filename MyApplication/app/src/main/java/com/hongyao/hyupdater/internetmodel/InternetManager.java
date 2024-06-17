@@ -20,6 +20,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.hongyao.hyupdater.utils.SystemPropertiesUtils;
 
+import java.util.Calendar;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -40,6 +41,7 @@ public class InternetManager {
     private User user = null;
     private static OkHttpClient client = null;
     public TimeOutInterface timeOutInterface;
+    private Calendar mCalendar = Calendar.getInstance();
     public InternetManager(TimeOutInterface timeOutInterface) {
         this.timeOutInterface = timeOutInterface;
         if(client == null){
@@ -137,7 +139,6 @@ public class InternetManager {
                 queryStateUser = response.body();
                 int is_need_update = queryStateUser.getIs_need_update();
                 String isShow = SystemPropertiesUtils.getProperty(Contain.ISQUERY_SHOW,"false");
-                String installNoUi = SystemPropertiesUtils.getProperty(Contain.INSTALL_NO_UI,"false");
                 String topPackageName = getTopPkgName(context);
                 LogUtils.messager("queryState-------------user.toString() = "
                         + queryStateUser.toString()
@@ -170,8 +171,16 @@ public class InternetManager {
                         }
                     }
                 }else if(is_need_update == 2){//force update 2
-                    if("false".equals(installNoUi)) {
-                        SystemPropertiesUtils.setProperty(Contain.INSTALL_NO_UI,"true");
+                    int deviceHour = -1;
+                    int requestHour = -2;
+                    if(queryStateUser != null){
+                        requestHour = queryStateUser.getForce_update_time();
+                    }
+                    if(mCalendar != null){
+                        deviceHour = mCalendar.get(Calendar.HOUR_OF_DAY);
+                        LogUtils.messager("deviceHour="+deviceHour);
+                    }
+                    if(requestHour == deviceHour) {
                         Intent tempIntent = new Intent(context, UpdatePackageInstallService.class);
                         Bundle bundle = new Bundle();
                         bundle.putSerializable("queryStateUser",queryStateUser);
