@@ -289,6 +289,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                    }else {
                        Toast.makeText(MainActivity.this, msg, Toast.LENGTH_SHORT).show();
                    }
+                   if (loadingDialog != null && loadingDialog.isShow()) {
+                       loadingDialog.dismiss();
+                   }
                    break;
                case needUpdate:
                    doNeedUpdate(user);
