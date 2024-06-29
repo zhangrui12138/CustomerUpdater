@@ -79,7 +79,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btn_back = (Button)findViewById(R.id.btn_back);
         btn_back.setOnClickListener(this);
         internetManager = new InternetManager(this);
-        serialno = Build.SERIAL;
+
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.P){
+            serialno = Build.getSerial();
+        }else {
+            serialno = Build.SERIAL;
+        }
         otaVersion = SystemPropertiesUtils.getProperty("ro.build.display.id", "");
         model = Build.MODEL;
         tv_device_model.setText(model);

@@ -41,7 +41,12 @@ public class CycleBroadcastReciver extends BroadcastReceiver {
                 SystemPropertiesUtils.setProperty(Contain.ISQUERY_SHOW, "false");
             break;
         }
-        serialno = Build.SERIAL;
+
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.P){
+            serialno = Build.getSerial();
+        }else {
+            serialno = Build.SERIAL;
+        }
         otaVersion = SystemPropertiesUtils.getProperty("ro.build.display.id", "");
         model = Build.MODEL;
         language = getSystemLanguage(context);
