@@ -29,7 +29,7 @@ public  class HyDialog3Button extends Dialog implements View.OnClickListener {
     public HyDialog3ButtonInterface hyDialog3ButtonInterface;
     private String type;
     public HyDialog3Button(Context context, String dialog_title, String dialog_msg,String dialog_ok,HyDialog3ButtonInterface hyDialog3ButtonInterface,String type) {
-        super(context);
+        super(context,R.style.Dialog);
         this.hyDialog3ButtonInterface = hyDialog3ButtonInterface;
         this.dialog_ok = dialog_ok;
         this.dialogTitle = dialog_title;
@@ -50,9 +50,9 @@ public  class HyDialog3Button extends Dialog implements View.OnClickListener {
         mHeight = wm.getDefaultDisplay().getHeight();
         if(mWidth >= mHeight){
             mWidth = mWidth / 3;
-            mHeight -= 100;
+            mHeight -= 50;
         }else {
-            mWidth -= 100;
+            mWidth -= 50;
             mHeight = mHeight / 3;
         }
         params.width = mWidth;

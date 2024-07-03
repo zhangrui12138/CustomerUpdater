@@ -31,7 +31,7 @@ public  class HyDialog extends Dialog implements View.OnClickListener {
 
     public HyDialog(Context context, String dialog_title,
                     String dialog_msg,String dialog_okButton,String dialog_cancelButton,int progressVisibility,MyDialogInterface myDialogInterface,String type) {
-        super(context);
+        super(context,R.style.Dialog);
         this.type = type;
         this.myDialogInterface = myDialogInterface;
         mContext = context;
